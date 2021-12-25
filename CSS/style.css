@@ -1,0 +1,27 @@
+/* CSS Reset */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+
+/* Root Container  */
+.root-container{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+}
+
+.second-root-container{
+    display: grid;
+    grid-template-rows: 1fr 13.5fr;
+}
+
+.content-container{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
