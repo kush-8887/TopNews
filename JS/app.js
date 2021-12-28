@@ -4,6 +4,8 @@ console.log('Demo Log');
 const newsApiKey = "266a47e8365c4cdca90fe238e03f6af0";
 
 let container = document.getElementById('container');
+let currentTimeContainer = document.querySelector('#currentTime');
+let currentDateContainer = document.querySelector('#currentDate');
 let country = "in";
 container.innerHTML = '';
 
@@ -22,13 +24,19 @@ function getNews(){
         })
     })
 }
-// function articlesView(){
-//     document.getElementsByClassName('container').innerText = articles[1];
-// }
 
 // User Location 
 // window.navigator.geolocation
 //   .getCurrentPosition(console.log, console.log);
-
-getNews();
-// articlesView();
+// getNews();
+setInterval(currentTime,1000);
+function currentTime() {
+    const date = new Date;
+    let time = date.toLocaleTimeString();
+    currentTimeContainer.innerHTML = time;
+}
+function currentDate(){
+    const date = new Date;
+    currentDateContainer.innerHTML = date.toLocaleDateString();
+}
+currentDate();

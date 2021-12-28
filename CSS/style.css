@@ -1,27 +1,60 @@
+/* Fonts  */
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Rubik&display=swap');
+
 /* CSS Reset */
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
+body{
+    font-family: 'Lora', serif;
+}
 
-
-
-
+/* Vertical Navbar  */
+.vertical-nav-bar{
+    height: 6vh;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.search-logo-container{
+    display: flex;
+    align-items: center;
+}
+.search-container{
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+}
+#searchParams{
+    width: 340px;
+    height: 30px;
+    border-radius: 3px;
+    font-size: 16px;
+    border: 1.5px solid;
+}
+#search{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.time-date-container{
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 215px;
+}
 
 /* Root Container  */
 .root-container{
-    height: 100vh;
+    height: 94vh;
     display: grid;
     grid-template-columns: 1fr 5fr;
-}
-
-.second-root-container{
-    display: grid;
-    grid-template-rows: 1fr 13.5fr;
 }
 
 .content-container{
     display: grid;
     grid-template-columns: 3fr 1fr;
+    height: 94vh;
 }
