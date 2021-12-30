@@ -1,14 +1,23 @@
 /* Fonts  */
 @import url('https://fonts.googleapis.com/css2?family=Lora&family=Rubik&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 /* CSS Reset */
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
+/* Variables */
+:root{
+    --body-color:#f5f5f5;
+    --black-color:#000000;
+    --white-color:#fff;
+    --text-weather-gery:#53627c;
+    --orange-color:#ff8c00;
+}
 body{
     font-family: 'Lora', serif;
+    background: var(--body-color);
 }
 
 /* Vertical Navbar  */
@@ -33,6 +42,7 @@ body{
     border-radius: 3px;
     font-size: 16px;
     border: 1.5px solid;
+    padding-left: 2px
 }
 #search{
     background: none;
@@ -57,4 +67,89 @@ body{
     display: grid;
     grid-template-columns: 3fr 1fr;
     height: 94vh;
+}
+
+.second-root-container{
+    overflow-y: scroll;
+}
+
+/* New container  */
+.news-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.news-card{
+    width: 950px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: var(--white-color);
+    border-radius: 10px;
+    height: 200px;
+    margin: 20px 0px;
+}
+.news-img{
+    height: 195px;
+    width: 325px;
+    border-radius: 10px;
+}
+.text-material{
+    width: 600px;
+    padding-left: 19px;
+}
+.news-title{
+    width: 600px;
+    font-size: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.news-discription{
+    width: 600px;
+    font-size: 14px;
+    padding: 10px 10px 10px 10px;
+}
+.news-link{
+    text-decoration: none;
+    color: var(--black-color);
+    padding: 0px 10px;
+}
+
+/* Other container  */
+.other-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    background: var(--news-card-color);
+}
+/* weather container  */
+.weather-card{
+    padding: 15px 20px;
+    background: var(--white-color);
+    border-radius: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+.city-name{
+    font-size: 25px;
+    color: var(--text-weather-gery);
+}
+.temprature{
+    font-size: 50px;
+}
+.celcius{
+    font-size: 28px;
+}
+.country{
+    font-size: 15px;
+    border-radius: 5px;
+    background-color:var(--orange-color) ;
+    width: 0px;
+    color: var(--white-color);
+    padding: 2px 8px;
+}
+.condition{
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-weather-gery);
 }

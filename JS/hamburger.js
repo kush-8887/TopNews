@@ -1,5 +1,5 @@
 function openFunction(){
-    document.getElementById("menu").style.width="257px";
+    document.getElementById("menu").style.width="250px";
     document.getElementById("mainbox").style.marginLeft="300px";
     document.getElementById("mainbox").innerHTML="";
 }
