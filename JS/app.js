@@ -9,11 +9,13 @@ let currentTimeContainer = document.querySelector('#currentTime');
 let currentDateContainer = document.querySelector('#currentDate');
 let weatherContainer = document.querySelector('#weatherContainer');
 weatherContainer.innerHTML = '';
+let coronaContainer = document.querySelector('#coronaUpdate');
+coronaContainer.innerHTML = '';
 
 // News Request Params
 let country = "in";
 
-//This function fetches the news
+//Function to fetche and display news
 function getNews(){
     url = `https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${newsApiKey}`;
     fetch(url).then((response)=>{
@@ -39,7 +41,7 @@ function getNews(){
 }
 getNews();
 
-// User Location 
+// Get User Location 
 const getPosition = () => {
     return new Promise((resolve, reject) => {
         const onSuccess = (position) => {
@@ -51,15 +53,35 @@ const getPosition = () => {
         }
 
         const onError = () => {
-            console.log('Can\'t get location info');
+            //If User denies location. default location displayed
+            function viewDefaultWeather(){
+                url = `http://api.weatherapi.com/v1/current.json?key=${weatherApiKey}&q="Delhi"`
+                fetch(url).then((response)=>{
+                    return response.json();
+                }).then((data)=>{
+                    let dataArray = Object.values(data);
+                    let locationData = dataArray[0];
+                    let weatherData = dataArray[1];
+                    let conditionData = Object.values(weatherData.condition);
+                    weatherContainer.innerHTML +=
+                    `<div class="weather-card">
+                    <div class="city-name">${locationData.name} <sup class="country">${locationData.country}</sup></div>
+                    <div class="temprature">${weatherData.temp_c}<sup class="celcius">&#8451;</sup></div>
+                    <div class="temp-img">
+                        <img src="${conditionData[1]}" alt="img">
+                    </div>
+                    <div class="condition">${conditionData[0]}</div>
+                </div>`
+                })
+            }
+            viewDefaultWeather();
             reject();
         }
-
         navigator.geolocation.getCurrentPosition(onSuccess, onError);
     })
 }
 
-// use it anywhere
+//Display weather
 getPosition().then((position) => {
     let latitude = position[0]
     let longitude = position[1];
@@ -73,7 +95,6 @@ getPosition().then((position) => {
             fetch(url).then((response)=>{
                 return response.json();
             }).then((data)=>{
-                console.log(data);
                 let dataArray = Object.values(data);
                 let locationData = dataArray[0];
                 let weatherData = dataArray[1];
@@ -94,10 +115,7 @@ getPosition().then((position) => {
     }
 });
 
-
-// window.navigator.geolocation.getCurrentPosition(console.log, console.log);
-
-//Function to get current time
+//Function display current time
 function currentTime() {
     const date = new Date;
     let time = date.toLocaleTimeString();
@@ -105,9 +123,46 @@ function currentTime() {
 }
 setInterval(currentTime,1000)
 
-//Funtion to get current date 
+//Funtion display current date 
 function currentDate(){
     const date = new Date;
     currentDateContainer.innerHTML = date.toLocaleDateString();
 }
 currentDate();
+
+//Function to get and display covid info
+function getCoronaData(){
+    url = `https://disease.sh/v3/covid-19/gov/India`
+    fetch(url).then((response) =>{
+        return response.json();
+    }).then((data) => {
+        let currentCovidData = Object.values(data);
+        coronaContainer.innerHTML +=
+        `<div class="covid-card">
+        <div class="country-name">
+            India
+        </div>
+        <p class="country-sub-text">
+            Coronavirus Status
+        </p>
+        <div class="flag">
+            <img class="flag-img" src="/imgs/india-flag.png" alt="indian-Flag">
+        </div>
+        <div class="total-cases">
+            Total Cases
+            <p>${currentCovidData[1].todayCases}</p>
+        </div>
+        <div class="active-dead-container">
+            <div class="active-cases">
+                Active Cases
+                <p>${currentCovidData[1].todayActive}</p>
+            </div>
+            <div class="dead">
+                Deaths
+                <p>${currentCovidData[1].todayDeaths}</p>
+            </div>
+        </div>
+    </div>`
+    })
+}
+getCoronaData();

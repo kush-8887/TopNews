@@ -118,19 +118,25 @@ body{
 /* Other container  */
 .other-container{
     display: flex;
-    justify-content: center;
     margin-top: 20px;
     background: var(--news-card-color);
+    flex-direction: column;
+    align-items: center;
 }
 /* weather container  */
+.weather-container{
+    height: fit-content;
+    width: fit-content;
+}
 .weather-card{
-    padding: 15px 20px;
+    padding: 25px 48px;
     background: var(--white-color);
     border-radius: 20px;
     font-family: 'Roboto', sans-serif;
+    width: 230px;
 }
 .city-name{
-    font-size: 25px;
+    font-size: 20px;
     color: var(--text-weather-gery);
 }
 .temprature{
@@ -152,4 +158,55 @@ body{
     text-transform: uppercase;
     letter-spacing: 1px;
     color: var(--text-weather-gery);
+}
+
+/* Corona Update */
+.covid-card{
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--white-color);
+    margin-top: 30px;
+    width: 230px;
+    height: 290px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.country-name{
+    font-size: 40px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.flag{
+    margin-top: 15px;
+}
+.country-sub-text{
+    color: var(--text-weather-gery);
+}
+.flag-img{
+    height: 45px;
+}
+.total-cases{
+    margin-top: 10px;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.active-dead-container{
+    display: flex;
+    margin-top: 20px;
+}
+.active-cases{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 25px;
+}
+.dead{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
