@@ -44,6 +44,7 @@
   padding-left: 20px;
 }
 .horizontal-nav-a {
+  cursor: pointer;
   text-decoration: none;
   color: var(--text-color);
   display: block;
@@ -68,6 +69,7 @@
 }
 .is-active{
   color: var(--hover-active-color);
+  cursor: pointer;
 }
 
 

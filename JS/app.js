@@ -11,11 +11,19 @@ let weatherContainer = document.querySelector('#weatherContainer');
 weatherContainer.innerHTML = '';
 let coronaContainer = document.querySelector('#coronaUpdate');
 coronaContainer.innerHTML = '';
+let home = document.querySelector('#home');
+let businessCategory = document.querySelector('#business');
+let entertainmentCategory = document.querySelector('#entertainment');
+let generalCategory = document.querySelector('#general');
+let healthCategory = document.querySelector('#health');
+let scienceCategory = document.querySelector('#science');
+let sportsCategory = document.querySelector('#sports');
+let technologyCategory = document.querySelector('#technology');
 
 // News Request Params
 let country = "in";
 
-//Function to fetche and display news
+//Function to fetch and display news
 function getNews(){
     url = `https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${newsApiKey}`;
     fetch(url).then((response)=>{
@@ -166,3 +174,277 @@ function getCoronaData(){
     })
 }
 getCoronaData();
+
+//Fetching news according to categories
+
+//Home
+home.addEventListener('click',()=>{
+    home.classList.add('is-active');
+    businessCategory.classList.remove('is-active');
+    entertainmentCategory.classList.remove('is-active');
+    generalCategory.classList.remove('is-active');
+    healthCategory.classList.remove('is-active');
+    scienceCategory.classList.remove('is-active');
+    sportsCategory.classList.remove('is-active');
+    technologyCategory.classList.remove('is-active');
+    newsContainer.innerHTML = '';
+    url = `https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${newsApiKey}`;
+    fetch(url).then((response)=>{
+        return response.json();
+    }).then((data)=>{
+        data.articles.forEach(article=>{
+            newsContainer.innerHTML += 
+            `<div class="news-card">
+            <div class="news-img-card" id="newsCardImg">
+                <img class="news-img" src="${article.urlToImage}" alt="newsImg">
+            </div>
+            <div class="text-material">
+            <div class="news-title" id="news-title">
+               <a href="${article.url}" target="_blank" class="news-link">${article.title}</a> 
+            </div>
+            <div class="news-discription">
+            ${article.description}
+            </div>
+            </div>
+        </div>`
+        })
+    })
+})
+//Business Category
+businessCategory.addEventListener('click',()=>{
+    newsContainer.innerHTML = '';
+    home.classList.remove('is-active');
+    businessCategory.classList.add('is-active');
+    entertainmentCategory.classList.remove('is-active');
+    generalCategory.classList.remove('is-active');
+    healthCategory.classList.remove('is-active');
+    scienceCategory.classList.remove('is-active');
+    sportsCategory.classList.remove('is-active');
+    technologyCategory.classList.remove('is-active');
+
+    url = `https://newsapi.org/v2/top-headlines?country=${country}&category=business&apiKey=${newsApiKey}`;
+    fetch(url).then((response)=>{
+        return response.json();
+    }).then((data)=>{
+        data.articles.forEach(article=>{
+            newsContainer.innerHTML += 
+            `<div class="news-card">
+            <div class="news-img-card" id="newsCardImg">
+                <img class="news-img" src="${article.urlToImage}" alt="newsImg">
+            </div>
+            <div class="text-material">
+            <div class="news-title" id="news-title">
+               <a href="${article.url}" target="_blank" class="news-link">${article.title}</a> 
+            </div>
+            <div class="news-discription">
+            ${article.description}
+            </div>
+            </div>
+        </div>`
+        })
+    })
+})
+
+//Entertainment category
+entertainmentCategory.addEventListener('click',()=>{
+    newsContainer.innerHTML = '';
+    home.classList.remove('is-active');
+    businessCategory.classList.remove('is-active');
+    entertainmentCategory.classList.add('is-active');
+    generalCategory.classList.remove('is-active');
+    healthCategory.classList.remove('is-active');
+    scienceCategory.classList.remove('is-active');
+    sportsCategory.classList.remove('is-active');
+    technologyCategory.classList.remove('is-active');
+    url = `https://newsapi.org/v2/top-headlines?country=${country}&category=entertainment&apiKey=${newsApiKey}`;
+    fetch(url).then((response)=>{
+        return response.json();
+    }).then((data)=>{
+        data.articles.forEach(article=>{
+            newsContainer.innerHTML += 
+            `<div class="news-card">
+            <div class="news-img-card" id="newsCardImg">
+                <img class="news-img" src="${article.urlToImage}" alt="newsImg">
+            </div>
+            <div class="text-material">
+            <div class="news-title" id="news-title">
+               <a href="${article.url}" target="_blank" class="news-link">${article.title}</a> 
+            </div>
+            <div class="news-discription">
+            ${article.description}
+            </div>
+            </div>
+        </div>`
+        })
+    })
+})
+
+// General Category 
+generalCategory.addEventListener('click',()=>{
+    newsContainer.innerHTML = '';
+    home.classList.remove('is-active');
+    businessCategory.classList.remove('is-active');
+    entertainmentCategory.classList.remove('is-active');
+    generalCategory.classList.add('is-active');
+    healthCategory.classList.remove('is-active');
+    scienceCategory.classList.remove('is-active');
+    sportsCategory.classList.remove('is-active');
+    technologyCategory.classList.remove('is-active');
+    url = `https://newsapi.org/v2/top-headlines?country=${country}&category=general&apiKey=${newsApiKey}`;
+    fetch(url).then((response)=>{
+        return response.json();
+    }).then((data)=>{
+        data.articles.forEach(article=>{
+            newsContainer.innerHTML += 
+            `<div class="news-card">
+            <div class="news-img-card" id="newsCardImg">
+                <img class="news-img" src="${article.urlToImage}" alt="newsImg">
+            </div>
+            <div class="text-material">
+            <div class="news-title" id="news-title">
+               <a href="${article.url}" target="_blank" class="news-link">${article.title}</a> 
+            </div>
+            <div class="news-discription">
+            ${article.description}
+            </div>
+            </div>
+        </div>`
+        })
+    })
+})
+
+// Health Category 
+healthCategory.addEventListener('click',()=>{
+    newsContainer.innerHTML = '';
+    home.classList.remove('is-active');
+    businessCategory.classList.remove('is-active');
+    entertainmentCategory.classList.remove('is-active');
+    generalCategory.classList.remove('is-active');
+    healthCategory.classList.add('is-active');
+    scienceCategory.classList.remove('is-active');
+    sportsCategory.classList.remove('is-active');
+    technologyCategory.classList.remove('is-active');
+    url = `https://newsapi.org/v2/top-headlines?country=${country}&category=health&apiKey=${newsApiKey}`;
+    fetch(url).then((response)=>{
+        return response.json();
+    }).then((data)=>{
+        data.articles.forEach(article=>{
+            newsContainer.innerHTML += 
+            `<div class="news-card">
+            <div class="news-img-card" id="newsCardImg">
+                <img class="news-img" src="${article.urlToImage}" alt="newsImg">
+            </div>
+            <div class="text-material">
+            <div class="news-title" id="news-title">
+               <a href="${article.url}" target="_blank" class="news-link">${article.title}</a> 
+            </div>
+            <div class="news-discription">
+            ${article.description}
+            </div>
+            </div>
+        </div>`
+        })
+    })
+})
+
+// Science Category 
+scienceCategory.addEventListener('click',()=>{
+    newsContainer.innerHTML = '';
+    home.classList.remove('is-active');
+    businessCategory.classList.remove('is-active');
+    entertainmentCategory.classList.remove('is-active');
+    generalCategory.classList.remove('is-active');
+    healthCategory.classList.remove('is-active');
+    scienceCategory.classList.add('is-active');
+    sportsCategory.classList.remove('is-active');
+    technologyCategory.classList.remove('is-active');
+    url = `https://newsapi.org/v2/top-headlines?country=${country}&category=science&apiKey=${newsApiKey}`;
+    fetch(url).then((response)=>{
+        return response.json();
+    }).then((data)=>{
+        data.articles.forEach(article=>{
+            newsContainer.innerHTML += 
+            `<div class="news-card">
+            <div class="news-img-card" id="newsCardImg">
+                <img class="news-img" src="${article.urlToImage}" alt="newsImg">
+            </div>
+            <div class="text-material">
+            <div class="news-title" id="news-title">
+               <a href="${article.url}" target="_blank" class="news-link">${article.title}</a> 
+            </div>
+            <div class="news-discription">
+            ${article.description}
+            </div>
+            </div>
+        </div>`
+        })
+    })
+})
+
+// Sport Category 
+sportsCategory.addEventListener('click',()=>{
+    newsContainer.innerHTML = '';
+    home.classList.remove('is-active');
+    businessCategory.classList.remove('is-active');
+    entertainmentCategory.classList.remove('is-active');
+    generalCategory.classList.remove('is-active');
+    healthCategory.classList.remove('is-active');
+    scienceCategory.classList.remove('is-active');
+    sportsCategory.classList.add('is-active');
+    technologyCategory.classList.remove('is-active');
+    url = `https://newsapi.org/v2/top-headlines?country=${country}&category=sports&apiKey=${newsApiKey}`;
+    fetch(url).then((response)=>{
+        return response.json();
+    }).then((data)=>{
+        data.articles.forEach(article=>{
+            newsContainer.innerHTML += 
+            `<div class="news-card">
+            <div class="news-img-card" id="newsCardImg">
+                <img class="news-img" src="${article.urlToImage}" alt="newsImg">
+            </div>
+            <div class="text-material">
+            <div class="news-title" id="news-title">
+               <a href="${article.url}" target="_blank" class="news-link">${article.title}</a> 
+            </div>
+            <div class="news-discription">
+            ${article.description}
+            </div>
+            </div>
+        </div>`
+        })
+    })
+})
+
+// Technology Category 
+technologyCategory.addEventListener('click',()=>{
+    newsContainer.innerHTML = '';
+    home.classList.remove('is-active');
+    businessCategory.classList.remove('is-active');
+    entertainmentCategory.classList.remove('is-active');
+    generalCategory.classList.remove('is-active');
+    healthCategory.classList.remove('is-active');
+    scienceCategory.classList.remove('is-active');
+    sportsCategory.classList.remove('is-active');
+    technologyCategory.classList.add('is-active');
+    url = `https://newsapi.org/v2/top-headlines?country=${country}&category=technology&apiKey=${newsApiKey}`;
+    fetch(url).then((response)=>{
+        return response.json();
+    }).then((data)=>{
+        data.articles.forEach(article=>{
+            newsContainer.innerHTML += 
+            `<div class="news-card">
+            <div class="news-img-card" id="newsCardImg">
+                <img class="news-img" src="${article.urlToImage}" alt="newsImg">
+            </div>
+            <div class="text-material">
+            <div class="news-title" id="news-title">
+               <a href="${article.url}" target="_blank" class="news-link">${article.title}</a> 
+            </div>
+            <div class="news-discription">
+            ${article.description}
+            </div>
+            </div>
+        </div>`
+        })
+    })
+})
