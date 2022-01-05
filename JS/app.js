@@ -154,7 +154,7 @@ function getCoronaData(){
             Coronavirus Status
         </p>
         <div class="flag">
-            <img class="flag-img" src="/imgs/india-flag.png" alt="indian-Flag">
+            <img class="flag-img" src="Assets/imgs/india-flag.png" alt="indian-Flag">
         </div>
         <div class="total-cases">
             Total Cases
