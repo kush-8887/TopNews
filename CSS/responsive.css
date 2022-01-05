@@ -1,5 +1,405 @@
-@media (max-width:50px) and (min-width:2560px){
-    .hamburger{
+@media (max-width:1200px) and (min-width:855px) {
+    .news-card{
+        width: fit-content;
+        height: fit-content;
+        flex-direction: column;
+    }
+    .news-img{
+        height: 256px;
+        width: 600px;
+    }
+    .news-discription{
+        width: 550px;
+        padding: 10px 10px 15px 10px;
+    }
+    .text-material{
+        padding-top: 10px;
+    }
+    .news-title{
+        width: 550px;
+    }
+}
+
+@media (max-width:855px) and (min-width:670px){
+    .news-card{
+        width: fit-content;
+        height: fit-content;
+        flex-direction: column;
+    }
+    .news-img{
+        height: 256px;
+        width: 600px;
+    }
+    .news-discription{
+        width: 550px;
+        padding: 10px 10px 15px 10px;
+    }
+    .text-material{
+        padding-top: 10px;
+    }
+    .news-title{
+        width: 550px;
+    }
+    .time-date-container{
+        display: none;
+    }
+    .content-container{
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: none;
+    }
+    .content-spacing{
+        grid-row-start: 2;
+    }
+    .other-container{
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    /* Weather card  */
+    .weather-card{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 20px;
+        width: 315px;
+    }
+    .temprature {
+        font-size: 32px;
+    }
+    .celcius{
+        font-size: 25px;
+    }
+    .temp-img{
+        display: none;
+    }
+    .condition{
+        display: none;
+    }
+    /* Covid Card */
+    .covid-card{
+        flex-direction: row;
+        margin-top: 0px;
+        padding: 33px 10px;
+        width: 350px;
+        justify-content: space-around;
+        height: 0px;
+    }
+    .country-name{
+        margin-top: 0px;
+        justify-content: none;
+        font-size: 32px;
+    }
+    .country-sub-text{
+        display: none;
+    }
+    .flag{
+        display: none;
+    }
+    .total-cases{
+        margin-top: 0px;
+        font-size: 14px;
+    }
+    .active-dead-container{
+        font-size: 14px;
+        margin-top: 0px;
+    }
+    .active-cases{
+        padding-right: 10px;
+    }
+}
+
+@media (max-width:670px) and (min-width:425px){
+    .news-card{
+        width: fit-content;
+        height: fit-content;
+        flex-direction: column;
+    }
+    .news-img{
+        height: 256px;
+        width: 600px;
+    }
+    .news-discription{
+        width: 550px;
+        padding: 10px 10px 15px 10px;
+    }
+    .text-material{
+        padding-top: 10px;
+    }
+    .main-logo{
+        width: 120px;
+    }
+    #searchParams{
+        width: 245px;
+    }
+    .news-title{
+        width: 550px;
+    }
+    .time-date-container{
+        display: none;
+    }
+    .content-container{
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: none;
+    }
+    .content-spacing{
+        grid-row-start: 2;
+    }
+    .other-container{
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    /* Weather card  */
+    .weather-card{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 20px;
+        width: 230px;
+    }
+    .temprature {
+        font-size: 32px;
+    }
+    .celcius{
+        font-size: 25px;
+    }
+    .temp-img{
+        display: none;
+    }
+    .condition{
+        display: none;
+    }
+    /* Covid Card */
+    .covid-card{
+        flex-direction: row;
+        margin-top: 0px;
+        padding: 33px 10px;
+        width: 268px;
+        justify-content: space-around;
+        height: 0px;
+    }
+    .country-name{
+        margin-top: 0px;
+        justify-content: none;
+        font-size: 32px;
+    }
+    .country-sub-text{
+        display: none;
+    }
+    .flag{
+        display: none;
+    }
+    .total-cases{
+        margin-top: 0px;
+        font-size: 14px;
+    }
+    .active-dead-container{
+        font-size: 14px;
+        margin-top: 0px;
+    }
+    .active-cases{
+        padding-right: 10px;
+    }
+    .dead{
+        display: none;
+    }
+}
+@media (max-width:645px) and (min-width:45px){
+    .news-card{
+        width: 90vw;
+        height: fit-content;
+        flex-direction: column;
+    }
+    .news-img{
+        height: 256px;
+        width: 90vw;
+    }
+    .news-discription{
+        width: 90vw;
+        padding: 10px 10px 10px 10px;
+    }
+    .text-material{
+        width: 90vw;
+        padding-left: 0px;
+        padding-top: 10px;
+    }
+    .main-logo{
+       display: none;
+    }
+    #searchParams{
+        width: 245px;
+    }
+    .news-title{
+        width: 90vw;
+    }
+    .time-date-container{
+        display: none;
+    }
+    .content-container{
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: none;
+    }
+    .content-spacing{
+        grid-row-start: 2;
+    }
+    .other-container{
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    /* Weather card  */
+    .weather-card{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 20px;
+        width: 90vw;
+    }
+    .temprature {
+        font-size: 32px;
+    }
+    .celcius{
+        font-size: 25px;
+    }
+    .temp-img{
+        display: none;
+    }
+    .condition{
+        display: block;
+    }
+    /* Covid Card */
+    .covid-card{
+        margin-top: 10px;
+        flex-direction: row;
+        padding: 33px 10px;
+        width: 90vw;
+        justify-content: space-around;
+        height: 0px;
+    }
+    .country-name{
+        margin-top: 0px;
+        justify-content: none;
+        font-size: 32px;
+    }
+    .country-sub-text{
+        display: none;
+    }
+    .flag{
+        display: none;
+    }
+    .total-cases{
+        margin-top: 0px;
+        font-size: 14px;
+    }
+    .active-dead-container{
+        font-size: 14px;
+        margin-top: 0px;
+    }
+    .active-cases{
+        padding-right: 10px;
+    }
+    .dead{
+        display: none;
+    }
+}
+@media (max-width:645px) and (min-width:45px){
+    .news-card{
+        width: 90vw;
+        height: fit-content;
+        flex-direction: column;
+    }
+    .news-img{
+        height: 256px;
+        width: 90vw;
+    }
+    .news-discription{
+        width: 90vw;
+        padding: 10px 10px 10px 10px;
+    }
+    .text-material{
+        width: 90vw;
+        padding-left: 0px;
+        padding-top: 10px;
+    }
+    .main-logo{
+       display: none;
+    }
+    #searchParams{
+        width: 180px;
+    }
+    .news-title{
+        width: 90vw;
+    }
+    .time-date-container{
+        display: none;
+    }
+    .content-container{
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: none;
+    }
+    .content-spacing{
+        grid-row-start: 2;
+    }
+    .other-container{
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    /* Weather card  */
+    .weather-card{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 20px;
+        width: 90vw;
+    }
+    .city-name{
+        font-size: 17px;
+    }
+    .country{
+        font-size: 13px;
+    }
+    .temprature {
+        font-size: 25px;
+    }
+    .celcius{
+        font-size: 23px;
+    }
+    .temp-img{
+        display: none;
+    }
+    .condition{
+        font-size: 17px;
+        display: block;
+    }
+    /* Covid Card */
+    .covid-card{
+        margin-top: 10px;
+        flex-direction: row;
+        padding: 33px 10px;
+        width: 90vw;
+        justify-content: space-around;
+        height: 0px;
+    }
+    .country-name{
+        margin-top: 0px;
+        justify-content: none;
+        font-size: 27px;
+    }
+    .country-sub-text{
+        display: none;
+    }
+    .flag{
+        display: none;
+    }
+    .total-cases{
+        margin-top: 0px;
+        font-size: 14px;
+    }
+    .active-dead-container{
+        font-size: 14px;
+        margin-top: 0px;
+    }
+    .active-cases{
+        padding-right: 10px;
+    }
+    .dead{
         display: none;
     }
 }
